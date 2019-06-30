@@ -1,15 +1,15 @@
 const discord = require("discord.js");
-const Client = new discord.Client();
+const bot = new discord.bot();
 
-Client.on('ready', () => {
+bot.on('ready', () => {
   console.log(`${bot.user.tag} is online!`)
 
-  Client.user.setActivity("with xPaySafeCard", { type: "PLAYING" });
+  bot.user.setActivity("with xPaySafeCard", { type: "PLAYING" });
 
 });
 
-Client.on('message', async message => {
+bot.on('message', async message => {
 if (message.content === `Hello`){
 message.reply(`Hello!`);
 });
-Client.login(process.env.BOT_TOKEN)
+bot.login(process.env.BOT_TOKEN)
